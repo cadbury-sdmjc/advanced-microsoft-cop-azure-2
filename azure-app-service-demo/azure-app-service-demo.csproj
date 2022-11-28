@@ -7,4 +7,9 @@
         <RootNamespace>azure_app_service_demo</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Azure.Identity" Version="1.8.0" />
+      <PackageReference Include="Azure.Storage.Blobs" Version="12.14.1" />
+    </ItemGroup>
+
 </Project>
