@@ -15,7 +15,9 @@ var containerClient = new BlobContainerClient("DefaultEndpointsProtocol=https;Ac
 var blobName = "hello-world-blob";
 
 app.MapGet("/", () => "hello world");
+
 app.MapGet("/executing-instance", () => app.Configuration["WEBSITE_INSTANCE_ID"][..4]);
+
 app.MapGet("/update-blob", async () =>
 {
     await containerClient.UploadBlobAsync(blobName, BinaryData.FromString(DateTime.UtcNow.ToString()));
@@ -44,4 +46,5 @@ app.MapGet("/read-blob-mi", async () =>
         });
     }
 });
+
 app.Run();
